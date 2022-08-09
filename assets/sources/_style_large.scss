@@ -1,0 +1,16 @@
+@media screen
+and (min-width: 1200px) {
+
+    body {
+        background-color: var(--backgrey);
+    }
+
+    main {
+        width: 60vw;
+        margin: 0 auto;
+        }
+
+    .fonctionnement {
+        flex-direction: row;
+    }
+}
