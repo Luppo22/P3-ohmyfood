@@ -2,6 +2,7 @@
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Oh My Food !</title>
+	<link rel="shortcut icon" href="assets/img/icon/ohmyfood_favicon.ico">
 	<meta charset="UTF-8">
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
 
@@ -26,13 +27,13 @@
 </head>
 <body>
 
+<main>
+
 <header>
 	<nav class="arrow home"><i class="fa-solid fa-arrow-left"></i></nav>
 	<img class="logo" src="assets/img/logo/ohmyfood.png" alt="logoOhMyFood">
 	<div class="third">&nbsp;</div>
 </header>
-
-<main>
 
 	<section class="presentation">
 		<div class="localize">
@@ -46,24 +47,26 @@
 
 	<section class="fonctionnement">
 		<h1>Fonctionnement</h1>
-		<button class="fonctionnement_btn" type="button">
-			<div class="number">1</div>
-			<i class="fa-solid fa-mobile-screen-button"></i>
-			<p>Choisissez un restaurant</p>
-			<div class="third">&nbsp;</div>
-		</button>
-		<button class="fonctionnement_btn" type="button">
-			<div class="number">2</div>
-			<i class="fa-solid fa-list-ul"></i>
-			<p>Composez votre menu</p>
-			<div class="third">&nbsp;</div>
-		</button>
-		<button class="fonctionnement_btn" type="button">
-			<div class="number">3</div>
-			<i class="fa-solid fa-store"></i>
-			<p>Degustez au restaurant</p>
-			<div class="third">&nbsp;</div>
-		</button>
+		<div class="fonctionnement_pos">
+			<button class="fonctionnement_btn" type="button">
+				<div class="number">1</div>
+				<i class="fa-solid fa-mobile-screen-button"></i>
+				<p>Choisissez un restaurant</p>
+				<div class="third">&nbsp;</div>
+			</button>
+			<button class="fonctionnement_btn" type="button">
+				<div class="number">2</div>
+				<i class="fa-solid fa-list-ul"></i>
+				<p>Composez votre menu</p>
+				<div class="third">&nbsp;</div>
+			</button>
+			<button class="fonctionnement_btn" type="button">
+				<div class="number">3</div>
+				<i class="fa-solid fa-store"></i>
+				<p>Degustez au restaurant</p>
+				<div class="third">&nbsp;</div>
+			</button>
+		</div>
 	</section>
 
 	<section class="restaurants">
@@ -119,6 +122,7 @@
 				</figcaption>
 			</figure>
 			</a>
+			<a href="a-la-francaise.html">
 			<figure class="card">
 				<img class="image_settings poscor_up2"
 					src="assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" 						
@@ -140,6 +144,8 @@
 					</div>
 				</figcaption>
 			</figure>
+			</a>
+			<a href="le-delice-des-sens.html">
 			<figure class="card">
 				<img class="image_settings poscor_up2"
 					src="assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 						
@@ -161,10 +167,11 @@
 					</div>
 				</figcaption>
 			</figure>
+			</a>
 		</div>
 	</section>
 
-	<footer>
+<footer>
 		<nav class="footer_content">
 			<ul>
 				<li><h2>ohmyfood</h2></li>
@@ -174,7 +181,8 @@
 				<li><a href="#">Contact</a></li>
 			</ul>
 			
-	</footer>
+</footer>
+
 </main>
 
 </body>

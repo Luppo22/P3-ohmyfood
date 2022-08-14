@@ -2,15 +2,108 @@
 and (min-width: 1200px) {
 
     body {
-        background-color: var(--backgrey);
+        background-color: #EDE3F9;
     }
 
     main {
         width: 60vw;
-        margin: 0 auto;
+        margin: 30px auto;
+        border-radius: 20px;
+        box-shadow: 0 12px 280px 0 var(--primaire);
         }
 
+/* - - - index homepage - - - - */
+
+    header {
+        width: 60vw;
+        border-radius: 20px 20px 0 0;
+        padding: 26px 0;
+        }
     .fonctionnement {
+        &_btn {
+            margin: 12px 16px;
+            }
+        &_btn .number {
+            flex: 0 1 30px;
+            height: 30px;
+            padding: 6px;
+            }
+        &_pos {
+            flex-direction: row;
+            }
+        }
+    .presentation {
+        & p {
+            font-size: 2em;
+            padding: 0 80px;
+            }
+        }
+    .restaurants {
+        & .card_content {
+            flex-direction: row;
+            flex-flow: wrap;
+            justify-content: space-between;
+            }
+        & .card {
+            width: 27vw;
+            margin: 0 0 40px 0;
+            }
+
+        }
+
+    .footer_content {
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        & h2 {
+            font-size: 2em;
+        }
+        }
+
+
+/* - - - menu - - - - */
+
+.menu_presentation {
+    & .menu_card {
+        width: 60%;
+        padding: 0 40px;
+        }
+    }
+
+.menu_content {
+    padding: 20px 40px;
+    & .menu_position {
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+    &_btn {
+        flex-direction: column;
+        -padding: 10px;
+        }
+    &_btn_child {
+        align-self: flex-start;
+        overflow-wrap: break-word;
+        margin: 0;
+        padding: 10px;
+        }
+    &_btn_child:nth-child(2){
+        align-self: flex-start;
+        margin: 0 0 2px 0;
+        }
+    & .menu_position &_btn {
+        -flex: 0 1 30vw;
+        max-width: 17vw;
+        }
+    & .btn {
+        width: 30%;
+        }
+    &_btn_child,
+    & h2,
+    & p {
+        overflow-wrap: break-word;
+        -text-overflow: clip;
+        -white-space: wrap;
+        -overflow: hidden;
+        }
     }
 }

@@ -1,0 +1,68 @@
+/* --Responsive Medium / iPad -- */
+
+@media screen
+and (min-width: 768px) 
+and (max-width: 1200px) { 
+
+/* - - - index homepage - - - - */
+
+.presentation {
+    & p {
+        font-size: 2em;
+        padding: 0 80px;
+        }
+    }
+.fonctionnement {
+    &_btn {
+        margin: 12px 16px;
+        }
+    &_btn .number {
+        flex: 0 1 3vw;
+        width: 3vw;
+        height: 3vw;
+        padding: 6px;
+        }
+    &_btn p {
+        text-align: left;
+        padding: 0 0 0 26px;
+        }
+    &_pos {
+        flex-direction: row;
+        }
+    }
+
+/* - - - menu - - - - */
+
+.menu_content {
+    & .menu_position {
+        flex-direction: row;
+        }
+    }
+
+.menu_content {
+    padding: 20px 40px;
+    & .menu_position {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+    &_btn {
+        flex-direction: column;
+        -padding: 10px;
+        }
+    &_btn_child {
+        align-self: flex-start;
+        overflow-wrap: break-word;
+        margin: 0;
+        padding: 10px;
+        }
+    &_btn_child:nth-child(2){
+        align-self: flex-start;
+        margin: 0 0 2px 0;
+        }
+    & .menu_position &_btn {
+        max-width: 28vw;
+        }
+    }
+
+}

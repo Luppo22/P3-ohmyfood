@@ -79,10 +79,10 @@ main {
     object-position: 50% 100%
     }
 
-/* - - - icons - - - */
+/* - - - svg & icons - - - */
 
 .st0 {
-	fill:none;
+	fill: none;
 	stroke:#000000;
 	stroke-miterlimit:10;
 	stroke-width:2;
@@ -101,6 +101,9 @@ main {
 .presentation .fa-solid {
     color: #000;
     }
+.menu_content .fa-solid {
+    color: #fff;
+    }
 .footer_content .fa-solid  {
     color: white; 
     }
@@ -118,6 +121,7 @@ header {
         flex: 0 1 26%;
         font-size: 1.4em;
         text-align: center;
+        padding: 0 40px 0 0;
         }
     & .arrow .fa-solid:hover {
         color: var(--primaire);
@@ -125,13 +129,10 @@ header {
     & .home {
         visibility: hidden;
         }
-    
     & .logo {
         flex: 1 1 48%;
         width: 100%;
-        -align-self: auto;
         }
-    
     & .third {
         flex: 0 1 26%;
         }
@@ -188,12 +189,13 @@ header {
 .fonctionnement {
     padding: 40px 20px 40px 30px;
     background: white;
-    display: flex;
-    flex-direction: column;
     & h1 {
         font-size: 1.4em;
         font-weight: 600;
-        -padding: 40px 60px 10px 60px;
+        }
+    &_pos {
+        display: flex;
+        flex-direction: column;
         }
     &_btn {  
         display: flex;
@@ -210,9 +212,13 @@ header {
         background-color: var(--backgrey);
         -webkit-box-shadow: 0 4px 14px 0 #d1d1d1;
         box-shadow: 0 4px 14px 0 #d1d1d1;
+        opacity: 0;
         }
     &_btn .number {
-        flex: 0 1 6%;
+        flex: 0 1 20px;
+        -flex: 0 1 6%;
+        -width: 20px;
+        -height: 20px;
         margin: 0 0 0 -12px;
         padding: 2px 6px;
         border-radius: 50%;
@@ -237,7 +243,7 @@ header {
 
 .restaurants {
     -border: 1px solid red;
-    padding: 40px 20px 40px 30px;
+    padding: 40px 20px;
     background-color: var(--backgrey);
     & h1 {
         font-size: 1.5em;
@@ -259,7 +265,7 @@ header {
         }
     & .card:hover {
         cursor: pointer;
-        background-color: var(--tertiaire);
+        background-color: #DDF6F0;
         }
     & .card img {
         height: 175px;
@@ -282,14 +288,17 @@ header {
         width: 26px;
         height: 26px;
         }
+
     .like:hover {
         cursor: pointer;
         }
+
     .like:active,
     .like:focus {
         fill: #9356DC;
         stroke:#9356DC;
         }
+    
     & .new {
         position: absolute;
         right: 28px;
@@ -339,8 +348,9 @@ header {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        right: 0;
-        top: 220px;
+        -right: 0;
+        -top: 220px;
+        margin-top: -60px;
         z-index: 99;
         width: 100%;
         background-color: var(--backgrey);
@@ -351,6 +361,9 @@ header {
         font-family: 'Shrikhand', cursive;  
         font-size: 1.6em;
         }
+    & .menu_card_child .corh1 { 
+            letter-spacing: 1px;
+        }   
     & .menu_card_child {
         flex: 0 1 auto;
         align-self: center;
@@ -366,13 +379,17 @@ header {
 .menu_content {
     height: auto;
     background-color: var(--backgrey);
-    padding: 0 20px 20px 20px;
+    padding: 20px;
+    & .menu_position {
+        display: flex;
+        flex-direction: column;
+        }
     &_btn {
         display: flex;
         justify-content: space-between;
         align-items: center;
         border: 0;
-        margin: 18px 0;
+        margin: 12px 0 4px 0;
         padding: 12px 10px;
         width: 100%;
         font-size: 1rem;
@@ -381,17 +398,23 @@ header {
         background-color: white;
         -webkit-box-shadow: 0 4px 14px 0 #d1d1d1;
         box-shadow: 0 4px 14px 0 #d1d1d1;
+        opacity: 0;
         transition: all .5s;
         }
     &_btn:hover {
         cursor: pointer;
         background-color: #DDF6F0;
         }
+    .icon_anim {
+        font-size: 1rem;
+        -padding: 10px;
+        background-color: var(--tertiaire);
+        -border: 1px red solid;
+        }
     &_btn_child {
         flex: 0 1 auto;
         padding: 0 14px 0 0;
         max-width: 74vw;
-        -border: 1px red solid;
         }
     &_btn_child:nth-child(2){
         align-self: flex-end;
@@ -412,9 +435,6 @@ header {
         font-weight: 500; 
         font-size: 1.1em; 
         text-align: left;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
         }
     & h3 {
         font-family: 'Roboto', sans-serif;
@@ -424,11 +444,8 @@ header {
     & p {
         font-size: .9em;
         font-weight: 300;
-        line-height: 1.8em;
         text-align: left;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        padding: 4px 0 0 0;
         }
     & .btn {
         display: block;
@@ -438,7 +455,87 @@ header {
 }
 
 
+@media screen
+and (max-width: 768px) {
+    .menu_content {
+        & h2,
+        & p {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+
+/* - - - animations - - - - */
+
+.fonctionnement {
+    &_btn {  
+        animation-name: slideDown;
+        animation-duration: .4s;
+        animation-fill-mode: forwards;
+        }
+    &_btn:nth-child(2) {
+        animation-delay: .2s;
+        }
+    &_btn:nth-child(3) {
+        animation-delay: .4s;
+        }
+    &_btn:nth-child(4) {
+        animation-delay: .6s;
+        }
+    }
+
+.menu_content {
+    &_btn {
+        animation-name: slideDown;
+        animation-duration: .4s;
+        animation-fill-mode: forwards;
+        }
+    &_btn:nth-child(2) {
+        animation-delay: .2s;
+        }
+    &_btn:nth-child(3) {
+        animation-delay: .4s;
+        }
+    &_btn:nth-child(4) {
+        animation-delay: .6s;
+        }
+    &_btn:nth-child(5) {
+        animation-delay: .8s;
+        }
+    &_btn:nth-child(6) {
+        animation-delay: .10s;
+        }
+    &_btn:nth-child(7) {
+        animation-delay: .12s;
+        }
+    &_btn:nth-child(8) {
+        animation-delay: .14s;
+        }
+    &_btn:nth-child(9) {
+        animation-delay: .16s;
+        }
+    &_btn:nth-child(10) {
+        animation-delay: .18s;
+        }
+    }
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+        }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        }
+    }
+
+@import "style_medium";
+
 @import "style_large";
+
 
 
 

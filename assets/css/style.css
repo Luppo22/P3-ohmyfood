@@ -77,7 +77,7 @@ main {
   object-position: 50% 100%;
 }
 
-/* - - - icons - - - */
+/* - - - svg & icons - - - */
 .st0 {
   fill: none;
   stroke: #000000;
@@ -100,6 +100,10 @@ main {
   color: #000;
 }
 
+.menu_content .fa-solid {
+  color: #fff;
+}
+
 .footer_content .fa-solid {
   color: white;
 }
@@ -117,6 +121,7 @@ header .arrow {
   flex: 0 1 26%;
   font-size: 1.4em;
   text-align: center;
+  padding: 0 40px 0 0;
 }
 header .arrow .fa-solid:hover {
   color: var(--primaire);
@@ -127,7 +132,6 @@ header .home {
 header .logo {
   flex: 1 1 48%;
   width: 100%;
-  -align-self: auto;
 }
 header .third {
   flex: 0 1 26%;
@@ -183,13 +187,14 @@ header .third {
 .fonctionnement {
   padding: 40px 20px 40px 30px;
   background: white;
-  display: flex;
-  flex-direction: column;
 }
 .fonctionnement h1 {
   font-size: 1.4em;
   font-weight: 600;
-  -padding: 40px 60px 10px 60px;
+}
+.fonctionnement_pos {
+  display: flex;
+  flex-direction: column;
 }
 .fonctionnement_btn {
   display: flex;
@@ -206,9 +211,13 @@ header .third {
   background-color: var(--backgrey);
   -webkit-box-shadow: 0 4px 14px 0 #d1d1d1;
   box-shadow: 0 4px 14px 0 #d1d1d1;
+  opacity: 0;
 }
 .fonctionnement_btn .number {
-  flex: 0 1 6%;
+  flex: 0 1 20px;
+  -flex: 0 1 6%;
+  -width: 20px;
+  -height: 20px;
   margin: 0 0 0 -12px;
   padding: 2px 6px;
   border-radius: 50%;
@@ -232,7 +241,7 @@ header .third {
 
 .restaurants {
   -border: 1px solid red;
-  padding: 40px 20px 40px 30px;
+  padding: 40px 20px;
   background-color: var(--backgrey);
 }
 .restaurants h1 {
@@ -255,7 +264,7 @@ header .third {
 }
 .restaurants .card:hover {
   cursor: pointer;
-  background-color: var(--tertiaire);
+  background-color: #DDF6F0;
 }
 .restaurants .card img {
   height: 175px;
@@ -331,8 +340,9 @@ header .third {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  right: 0;
-  top: 220px;
+  -right: 0;
+  -top: 220px;
+  margin-top: -60px;
   z-index: 99;
   width: 100%;
   background-color: var(--backgrey);
@@ -342,6 +352,9 @@ header .third {
   padding: 30px 20px;
   font-family: "Shrikhand", cursive;
   font-size: 1.6em;
+}
+.menu_presentation .menu_card_child .corh1 {
+  letter-spacing: 1px;
 }
 .menu_presentation .menu_card_child {
   flex: 0 1 auto;
@@ -358,14 +371,18 @@ header .third {
 .menu_content {
   height: auto;
   background-color: var(--backgrey);
-  padding: 0 20px 20px 20px;
+  padding: 20px;
+}
+.menu_content .menu_position {
+  display: flex;
+  flex-direction: column;
 }
 .menu_content_btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 0;
-  margin: 18px 0;
+  margin: 12px 0 4px 0;
   padding: 12px 10px;
   width: 100%;
   font-size: 1rem;
@@ -374,17 +391,23 @@ header .third {
   background-color: white;
   -webkit-box-shadow: 0 4px 14px 0 #d1d1d1;
   box-shadow: 0 4px 14px 0 #d1d1d1;
+  opacity: 0;
   transition: all 0.5s;
 }
 .menu_content_btn:hover {
   cursor: pointer;
   background-color: #DDF6F0;
 }
+.menu_content .icon_anim {
+  font-size: 1rem;
+  -padding: 10px;
+  background-color: var(--tertiaire);
+  -border: 1px red solid;
+}
 .menu_content_btn_child {
   flex: 0 1 auto;
   padding: 0 14px 0 0;
   max-width: 74vw;
-  -border: 1px red solid;
 }
 .menu_content_btn_child:nth-child(2) {
   align-self: flex-end;
@@ -405,9 +428,6 @@ header .third {
   font-weight: 500;
   font-size: 1.1em;
   text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .menu_content h3 {
   font-family: "Roboto", sans-serif;
@@ -417,11 +437,8 @@ header .third {
 .menu_content p {
   font-size: 0.9em;
   font-weight: 300;
-  line-height: 1.8em;
   text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  padding: 4px 0 0 0;
 }
 .menu_content .btn {
   display: block;
@@ -429,18 +446,222 @@ header .third {
   margin: 60px auto 30px auto;
 }
 
+@media screen and (max-width: 768px) {
+  .menu_content h2, .menu_content p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+/* - - - animations - - - - */
+.fonctionnement_btn {
+  animation-name: slideDown;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.fonctionnement_btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fonctionnement_btn:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.fonctionnement_btn:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.menu_content_btn {
+  animation-name: slideDown;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.menu_content_btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.menu_content_btn:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.menu_content_btn:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.menu_content_btn:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.menu_content_btn:nth-child(6) {
+  animation-delay: 0.1s;
+}
+.menu_content_btn:nth-child(7) {
+  animation-delay: 0.12s;
+}
+.menu_content_btn:nth-child(8) {
+  animation-delay: 0.14s;
+}
+.menu_content_btn:nth-child(9) {
+  animation-delay: 0.16s;
+}
+.menu_content_btn:nth-child(10) {
+  animation-delay: 0.18s;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* --Responsive Medium / iPad -- */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  /* - - - index homepage - - - - */
+  .presentation p {
+    font-size: 2em;
+    padding: 0 80px;
+  }
+
+  .fonctionnement_btn {
+    margin: 12px 16px;
+  }
+  .fonctionnement_btn .number {
+    flex: 0 1 3vw;
+    width: 3vw;
+    height: 3vw;
+    padding: 6px;
+  }
+  .fonctionnement_btn p {
+    text-align: left;
+    padding: 0 0 0 26px;
+  }
+  .fonctionnement_pos {
+    flex-direction: row;
+  }
+
+  /* - - - menu - - - - */
+  .menu_content .menu_position {
+    flex-direction: row;
+  }
+
+  .menu_content {
+    padding: 20px 40px;
+  }
+  .menu_content .menu_position {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .menu_content_btn {
+    flex-direction: column;
+    -padding: 10px;
+  }
+  .menu_content_btn_child {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    margin: 0;
+    padding: 10px;
+  }
+  .menu_content_btn_child:nth-child(2) {
+    align-self: flex-start;
+    margin: 0 0 2px 0;
+  }
+  .menu_content .menu_position .menu_content_btn {
+    max-width: 28vw;
+  }
+}
 @media screen and (min-width: 1200px) {
   body {
-    background-color: var(--backgrey);
+    background-color: #EDE3F9;
   }
 
   main {
     width: 60vw;
-    margin: 0 auto;
+    margin: 30px auto;
+    border-radius: 20px;
+    box-shadow: 0 12px 280px 0 var(--primaire);
   }
 
-  .fonctionnement {
+  /* - - - index homepage - - - - */
+  header {
+    width: 60vw;
+    border-radius: 20px 20px 0 0;
+    padding: 26px 0;
+  }
+
+  .fonctionnement_btn {
+    margin: 12px 16px;
+  }
+  .fonctionnement_btn .number {
+    flex: 0 1 30px;
+    height: 30px;
+    padding: 6px;
+  }
+  .fonctionnement_pos {
     flex-direction: row;
+  }
+
+  .presentation p {
+    font-size: 2em;
+    padding: 0 80px;
+  }
+
+  .restaurants .card_content {
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+  .restaurants .card {
+    width: 27vw;
+    margin: 0 0 40px 0;
+  }
+
+  .footer_content {
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+  }
+  .footer_content h2 {
+    font-size: 2em;
+  }
+
+  /* - - - menu - - - - */
+  .menu_presentation .menu_card {
+    width: 60%;
+    padding: 0 40px;
+  }
+
+  .menu_content {
+    padding: 20px 40px;
+  }
+  .menu_content .menu_position {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .menu_content_btn {
+    flex-direction: column;
+    -padding: 10px;
+  }
+  .menu_content_btn_child {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    margin: 0;
+    padding: 10px;
+  }
+  .menu_content_btn_child:nth-child(2) {
+    align-self: flex-start;
+    margin: 0 0 2px 0;
+  }
+  .menu_content .menu_position .menu_content_btn {
+    -flex: 0 1 30vw;
+    max-width: 17vw;
+  }
+  .menu_content .btn {
+    width: 30%;
+  }
+  .menu_content_btn_child, .menu_content h2, .menu_content p {
+    overflow-wrap: break-word;
+    -text-overflow: clip;
+    -white-space: wrap;
+    -overflow: hidden;
   }
 }
 
