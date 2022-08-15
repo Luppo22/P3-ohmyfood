@@ -34,12 +34,6 @@ and (max-width: 1200px) {
 /* - - - menu - - - - */
 
 .menu_content {
-    & .menu_position {
-        flex-direction: row;
-        }
-    }
-
-.menu_content {
     padding: 20px 40px;
     & .menu_position {
         flex-direction: row;
