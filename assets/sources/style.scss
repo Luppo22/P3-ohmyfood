@@ -26,6 +26,9 @@ $black-lighten: lighten(#262627,15%);
 $green-darken: darken(#99E2D0,35%);
 $gray-darken: darken(#EAEAEA, 30%);
 
+$posnew: calc(100vw - 136px);
+$posnewdesktop: calc(60vw - 136px);
+
 /* - - - Repère - - - - */
 
 header, .arrow, .logo, .third {
@@ -235,7 +238,6 @@ header {
         flex: 0 1 26%;
         }
     }
-
 .presentation {
     padding: 0 0 40px 0;
     text-align: center;
@@ -260,7 +262,6 @@ header {
         padding: 0 10px 0 0;
         }
     }
-
 .btn {
     display: block;
     border: 0;
@@ -288,8 +289,7 @@ header {
         box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                     inset 2px 2px 3px rgba(0, 0, 0, .6);
     }
-}
-
+    }
 .fonctionnement {
     padding: 40px 20px 40px 30px;
     background: white;
@@ -344,7 +344,6 @@ header {
         flex: 1 1 20%;
         }
     }
-
 .restaurants {
     -border: 1px solid red;
     padding: 40px 20px;
@@ -392,21 +391,22 @@ header {
         width: 26px;
         height: 26px;
         }
-
     .like:hover {
         cursor: pointer;
         }
-
     .like:active,
     .like:focus {
         fill: #9356DC;
         stroke:#9356DC;
         }
-    
     & .new {
-        position: absolute;
-        right: 28px;
-        margin: 12px;
+        -position: absolute;
+        -right: 28px;
+        -margin: 12px;
+            position: relative;
+            margin: 0 0 -38px $posnew;
+            width: 80px;
+            text-align: center;
         padding: 6px 10px;
         border-radius: 2px;
         z-index: 3;
@@ -416,7 +416,6 @@ header {
         background-color: var(--tertiaire);
         }
     }
-
 .footer_content {
     padding: 20px 20px 40px 20px;
     color: white;
@@ -437,7 +436,7 @@ header {
         color: white;
     }
 
-}
+    }
 
 /* - - - menu - - - - */
 
@@ -479,7 +478,7 @@ header {
         -border: 2px red solid;
         margin: 0 40px 0 0;
         }
-}
+    }
 .menu_content {
     height: auto;
     background-color: var(--backgrey);
@@ -500,7 +499,6 @@ header {
         border-bottom: 4px solid var(--tertiaire);
         }
     }
-
 .menu {
 	display: flex;
 	flex-direction: column;
