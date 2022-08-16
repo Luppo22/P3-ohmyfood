@@ -2,7 +2,8 @@
 
 @media screen
 and (min-width: 768px) 
-and (max-width: 1200px) { 
+and (max-width: 1200px) 
+and (orientation:portrait) {
 
 /* - - - index homepage - - - - */
 
@@ -10,6 +11,9 @@ and (max-width: 1200px) {
     & p {
         font-size: 2em;
         padding: 0 80px;
+        }
+    & .btn {
+        width: 50%;
         }
     }
 .fonctionnement {
@@ -33,30 +37,70 @@ and (max-width: 1200px) {
 
 /* - - - menu - - - - */
 
+.menu_presentation {
+    & .menu_card h1 {
+        padding: 30px 0 30px 60px;
+        font-size: 1.6em;
+        }
+}
+
 .menu_content {
     padding: 20px 40px;
+    & h1 {
+        font-size: 1.2em;
+        margin: 16px 0 16px 10px;
+        }
     & .menu_position {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        }
-    &_btn {
-        flex-direction: column;
-        -padding: 10px;
-        }
-    &_btn_child {
-        align-self: flex-start;
-        overflow-wrap: break-word;
-        margin: 0;
-        padding: 10px;
-        }
-    &_btn_child:nth-child(2){
-        align-self: flex-start;
-        margin: 0 0 2px 0;
-        }
-    & .menu_position &_btn {
-        max-width: 28vw;
+        & .menu {
+            margin: 4px 0;
+            flex: 0 1 50%;
+            max-width: 50%;
+            &__check {
+                padding: 0 28px 0 20px;
+                }
+            }
         }
     }
 
+/* - - - footer - - - - */
+.footer_content {
+    padding: 20px 20px 40px 40px;
+}
+}
+
+@media screen
+and (min-width: 768px) 
+and (max-width: 1200px) 
+and (orientation:landscape) {
+
+    .menu_presentation {
+        & .menu_card {
+            padding: 0 120px;
+            }
+    }
+    .menu_content {
+        padding: 20px 120px;
+        & h1 {
+            font-size: 1.2em;
+            margin: 16px 0 16px 10px;
+            }
+
+        & .menu_position {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            & .menu {
+                margin: 4px 0;
+                flex: 0 1 50%;
+                max-width: 50%;
+                &__check {
+                    padding: 0 28px 0 20px;
+                    }
+                }
+            }
+        }
+  
 }

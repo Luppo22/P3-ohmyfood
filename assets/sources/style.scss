@@ -70,6 +70,10 @@ h2 {
     font-size: 1.2em;
     }
 
+h3 {
+    font-size: 1.1em;
+    }
+
 main {
     width: 100vw;
     margin: 0 auto;
@@ -130,7 +134,7 @@ main {
 .loader{
     position: fixed;
     inset: 0;
-    z-index: 1;
+    z-index: 4;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -146,6 +150,7 @@ main {
         border-bottom: 1px white solid;
         }
     & h2 {
+        font-size: 2em;
         padding: 0 0 6px 0;
         }
     & .fa-solid {
@@ -154,8 +159,11 @@ main {
         }
     & .fa-utensils {
         margin: 0 20px 10px 0;
+        transform: translateY(0);
+        animation: spinjump 1.5s ease-in-out infinite;
         }
-	}
+    }
+	
     @keyframes disappear {
         0% {
           opacity: 1;
@@ -168,21 +176,35 @@ main {
         100% {
           opacity: 0;
           visibility: hidden;
-        }}
-.fa-utensils {
-        transform: translateY(0);
-        animation: spinjump 300ms ease-in-out infinite;
         }
+    }
+
     @keyframes spinjump {
         0% {
             transform: translateY(10px);
         }
-        50% {
+        8% {
             transform: translateY(0);
+        }
+        16% {
+            transform: translateY(10px);
+        }
+        24% {
+            transform: translateY(0);
+        }
+        32% {
+            transform: translateY(10px);
+        }
+        40% {
+            transform: translateY(0);
+        }
+        48% {
+            transform: translateY(10px);
         }
         100% {
             transform: translateY(10px);
-        }}
+        }
+    }
 
 /* - - - index homepage - - - - */
 
@@ -207,7 +229,7 @@ header {
         }
     & .logo {
         flex: 1 1 48%;
-        width: 100%;
+        width: 50%;
         }
     & .third {
         flex: 0 1 26%;
@@ -387,7 +409,7 @@ header {
         margin: 12px;
         padding: 6px 10px;
         border-radius: 2px;
-        z-index: 99;
+        z-index: 3;
         font-size: .9em;
         font-weight: 500;
         color: #009966;
@@ -461,29 +483,23 @@ header {
 .menu_content {
     height: auto;
     background-color: var(--backgrey);
-    padding: 20px;
+    padding: 20px 10px;
     & .menu_position {
         display: flex;
         flex-direction: column;
         }
     & h1 {
         font-family: 'Roboto', sans-serif;
-        font-size: 1em;
-        font-weight: 400;
+        font-size: 1.1em;
+        font-weight: 300;
         text-transform:uppercase;
         color: #666;
         width: 30px;
         padding: 20px 0 6px 0;
+        margin: 10px 0 10px 12px;
         border-bottom: 4px solid var(--tertiaire);
         }
     }
-
--button {
-	margin: 0;
-	padding: 0;
-    border: 0;
-    background-color: transparent;
-	}
 
 .menu {
 	display: flex;
@@ -492,7 +508,7 @@ header {
 	align-items: center;
     border: 0;
     background-color: transparent;
-	margin: 6px 10px;
+	margin: 6px 0;
     opacity: 0;
     transition: all 0.5s;
     &__elements {
@@ -513,6 +529,9 @@ header {
         min-width: 80%;
         padding: 10px;
         }
+    &__description p {
+        font-weight: 300;
+        }
     &__description h3,
     &__description p {
         margin: 4px 8px;
@@ -532,15 +551,17 @@ header {
         align-items: center;
         justify-content: center;
         height: 100%;
-        padding: 0 20px;
+        padding: 0 24px;
         border-radius: 0px 20px 20px 0px;
         background-color: #99E2D0;
         }
+        .fa-circle-check {
+            color: #fffefc;
+             font-size: 24px;
+            }
     }
-.fa-circle-check {
-	color: #fffefc;
- 	font-size: 24px;
-	}
+
+/* - - - animations - - - - */
 
 /* transition */
 .menu__container,
@@ -551,7 +572,6 @@ header {
 	}
 
 /* animation */
-
 .menu__elements:hover .menu__price {
 	width: 20%;
 	}
@@ -563,21 +583,6 @@ header {
 	transform: rotate(-360deg);
     animation: checkSpin 0.5s;
 	}
-
-
-@media screen
-and (max-width: 768px) {
-    .menu_content {
-        & h3,
-        & p {
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-    }
-}
-
-/* - - - animations - - - - */
 
 .fonctionnement {
     &_btn {  
@@ -642,6 +647,18 @@ and (max-width: 768px) {
         opacity: 1;
         }
     }
+
+@media screen
+and (max-width: 768px) {
+    .menu_content {
+        & h3,
+        & p {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
 
 @import "style_medium";
 
