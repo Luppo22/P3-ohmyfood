@@ -51,10 +51,14 @@ and (min-width: 1200px) {
             width: 27vw;
             margin: 0 0 40px 0;
             }
-        & .new {
-            margin: 0 0 -38px $posnewdesktop;
+        & .card:nth-child(1) {
+            & .new {
+                margin: 0 0 -38px calc($posnewdesktop);
+                }
             }
-
+        & .new {
+            margin: 0 0 -38px $posnewdesktop1;
+            }
         }
 
     .footer_content {

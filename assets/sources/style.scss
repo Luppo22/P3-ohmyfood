@@ -9,25 +9,14 @@
 --backgrey: #f1f1f1;
 }
 
-/* Color Variable */
+/* Variable */
 $purple: #9356DC;
 $pink:#FF79DA;
 $green: #99E2D0;
-$gray: #EAEAEA;
-$black: #262627;
-$white:#fffefc;
-
-$gray-lighten: lighten(#EAEAEA,5%);
-$purple-lighten: lighten(#9356DC,35%);
-$purple-lighten-stronger: lighten(#9356DC,5%);
-$pink-lighten: lighten(#FF79DA,5%);
-$black-lighten: lighten(#262627,15%);
-
-$green-darken: darken(#99E2D0,35%);
-$gray-darken: darken(#EAEAEA, 30%);
 
 $posnew: calc(100vw - 136px);
 $posnewdesktop: calc(60vw - 136px);
+$posnewdesktop1: calc(30vw - 136px);
 
 /* - - - Repère - - - - */
 
@@ -137,7 +126,7 @@ main {
 .loader{
     position: fixed;
     inset: 0;
-    z-index: 4;
+    z-index: 99;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -146,6 +135,7 @@ main {
     background-color: $purple;
     opacity: 1;
     visibility: visible;
+    overflow: hidden;
     animation: disappear 1s 2s forwards;
     .logospin {
         display: flex;
@@ -206,6 +196,58 @@ main {
         }
         100% {
             transform: translateY(10px);
+        }
+    }
+
+/* - - - heart anim - - - - */
+    .restaurants .card_name_child,
+    .menu_presentation .menu_card_child {
+            .fa-regular {
+                font-size: 30px;
+                }
+            .fa-solid {
+                font-size: 30px;
+                opacity: 0;
+                position: absolute;
+                mix-blend-mode: multiply;
+                }
+            .fa-solid:hover {
+                cursor: pointer;
+                animation: heartAnimation 600ms ease-in forwards;
+                }
+        }
+    .restaurants .card_name_child {
+            .fa-regular {
+                margin: 0;
+                }
+            .fa-solid {
+                margin: 0;
+                }
+        }
+    .menu_presentation .menu_card_child {
+            .fa-regular {
+                margin: 0 20px 0 0;
+                }
+            .fa-solid {
+                margin: 0 20px 0 0;
+                }
+        }
+     
+    @keyframes heartAnimation {
+        0%{
+        background: linear-gradient($purple, $pink);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        }
+    
+        100%{
+        background: linear-gradient($pink, $purple);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 1;
         }
     }
 
@@ -364,11 +406,13 @@ header {
         -webkit-box-shadow: 0 4px 14px 0 #B0B0B0;
         box-shadow: 0 4px 14px 0 #B0B0B0;
         background-color: white;
-        transition: background-color .4s;
+        -transition: background-color .4s;
+        transition: margin .4s;
         }
     & .card:hover {
         cursor: pointer;
-        background-color: #DDF6F0;
+        -webkit-box-shadow: 0 8px 24px 0 #666;
+        box-shadow: 0 8px 24px 0 #666;
         }
     & .card img {
         height: 175px;
@@ -387,26 +431,14 @@ header {
         flex: 0 1 auto;
         align-self: center;
         }
-    .like {
-        width: 26px;
-        height: 26px;
-        }
-    .like:hover {
-        cursor: pointer;
-        }
-    .like:active,
-    .like:focus {
-        fill: #9356DC;
-        stroke:#9356DC;
-        }
     & .new {
         -position: absolute;
         -right: 28px;
         -margin: 12px;
-            position: relative;
-            margin: 0 0 -38px $posnew;
-            width: 80px;
-            text-align: center;
+        position: relative;
+        margin: 0 0 -38px $posnew;
+        width: 80px;
+        text-align: center;
         padding: 6px 10px;
         border-radius: 2px;
         z-index: 3;
