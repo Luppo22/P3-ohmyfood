@@ -269,6 +269,9 @@ header .third {
   padding: 0 0 40px 0;
   text-align: center;
   background-color: var(--backgrey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .presentation h1 {
   font-size: 1.6em;
@@ -281,6 +284,7 @@ header .third {
   padding: 0 10px;
 }
 .presentation .localize {
+  width: 100%;
   padding: 16px 0;
   background-color: #e9e9e9;
   box-shadow: inset 0 0.1em 0.2em #ccc;
@@ -291,19 +295,18 @@ header .third {
 }
 
 .btn {
-  display: block;
-  border: 0;
+  -display: block;
   margin: 20px auto;
-  width: 80%;
+  -max-width: 40%;
+  -margin: 20px 0;
   padding: 16px 24px;
   font-size: 1rem;
   text-align: center;
-  -color: #fff;
   border-radius: 40px;
   background: linear-gradient(356deg, var(--primaire) 0%, var(--secondaire) 100%);
   -webkit-box-shadow: 0 4px 14px 0 #B0B0B0;
   box-shadow: 0 4px 14px 0 #B0B0B0;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 .btn:hover {
   cursor: pointer;
@@ -374,7 +377,6 @@ header .third {
 }
 
 .restaurants {
-  -border: 1px solid red;
   padding: 40px 20px;
   background-color: var(--backgrey);
 }
@@ -420,11 +422,8 @@ header .third {
   align-self: center;
 }
 .restaurants .new {
-  -position: absolute;
-  -right: 28px;
-  -margin: 12px;
   position: relative;
-  margin: 0 0 -38px calc(100vw - 136px);
+  margin: 0 0 -38px calc(100vw - 140px);
   width: 80px;
   text-align: center;
   padding: 6px 10px;
@@ -457,19 +456,17 @@ header .third {
   color: white;
 }
 
-/* - - - menu - - - - */
+/* - - - pages restaurants - - - - */
 .menu_presentation .image_menu {
   width: 100%;
   min-height: 100%;
-  max-height: 240px;
+  max-height: 340px;
   object-fit: cover;
 }
 .menu_presentation .menu_card {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  -right: 0;
-  -top: 220px;
   margin-top: -60px;
   z-index: 99;
   width: 100%;
@@ -487,13 +484,7 @@ header .third {
 .menu_presentation .menu_card_child {
   flex: 0 1 auto;
   align-self: center;
-  -border: 2px blue solid;
-}
-.menu_presentation .menu_card_child .like {
-  width: 24px;
-  height: 24px;
-  -border: 2px red solid;
-  margin: 0 40px 0 0;
+  margin: 0 0 0 10px;
 }
 
 .menu_content {
@@ -513,14 +504,17 @@ header .third {
   color: #666;
   width: 30px;
   padding: 20px 0 6px 0;
-  margin: 10px 0 10px 12px;
+  margin: 10px 0 10px 20px;
   border-bottom: 4px solid var(--tertiaire);
+}
+.menu_content .presentation {
+  padding: 0;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 0;
   background-color: transparent;
@@ -534,7 +528,7 @@ header .third {
   border-radius: 20px;
   background-color: white;
   box-shadow: 0 4px 14px 0 #d1d1d1;
-  width: 100%;
+  width: 96%;
 }
 .menu__container {
   display: flex;
@@ -586,18 +580,17 @@ header .third {
 }
 
 /* animation */
-.menu__elements:hover .menu__price {
-  width: 20%;
-}
-
 .menu__elements:hover .menu__container {
   cursor: pointer;
   width: 80%;
 }
 
+.menu__elements:hover .menu__price {
+  width: 20%;
+}
+
 .menu__elements:hover .fa-circle-check {
   transform: rotate(-360deg);
-  animation: checkSpin 0.5s;
 }
 
 .fonctionnement_btn {
@@ -676,7 +669,7 @@ header .third {
     padding: 0 80px;
   }
   .presentation .btn {
-    width: 50%;
+    -width: 50%;
   }
 
   .fonctionnement_btn {
@@ -696,10 +689,13 @@ header .third {
     flex-direction: row;
   }
 
-  /* - - - menu - - - - */
+  /* - - - pages restaurants - - - - */
   .menu_presentation .menu_card h1 {
     padding: 30px 0 30px 60px;
-    font-size: 1.6em;
+    font-size: 2em;
+  }
+  .menu_presentation .menu_card_child .fa-heart {
+    margin: 0 50px 0 0;
   }
 
   .menu_content {
@@ -707,7 +703,7 @@ header .third {
   }
   .menu_content h1 {
     font-size: 1.2em;
-    margin: 16px 0 16px 10px;
+    margin: 16px 0 16px 20px;
   }
   .menu_content .menu_position {
     flex-direction: row;
@@ -729,8 +725,43 @@ header .third {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+  .fonctionnement_btn {
+    margin: 12px 16px;
+  }
+  .fonctionnement_btn .number {
+    flex: 0 1 30px;
+    height: 30px;
+    padding: 6px;
+  }
+  .fonctionnement_pos {
+    flex-direction: row;
+  }
+
+  .restaurants {
+    padding: 40px 60px;
+  }
+  .restaurants .card_content {
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+  .restaurants .card {
+    width: 42vw;
+    margin: 0 0 40px 0;
+  }
+  .restaurants .card:nth-child(1) .new {
+    margin: 0 0 -38px calc(48vw - 160px);
+  }
+  .restaurants .new {
+    margin: 0 0 -38px calc(2vw - 160px);
+  }
+
   .menu_presentation .menu_card {
     padding: 0 120px;
+  }
+  .menu_presentation .menu_card h1 {
+    padding: 30px 20px;
+    font-size: 2em;
   }
 
   .menu_content {
@@ -738,7 +769,7 @@ header .third {
   }
   .menu_content h1 {
     font-size: 1.2em;
-    margin: 16px 0 16px 10px;
+    margin: 16px 0 16px 20px;
   }
   .menu_content .menu_position {
     flex-direction: row;
@@ -751,7 +782,29 @@ header .third {
     max-width: 50%;
   }
   .menu_content .menu_position .menu__check {
-    padding: 0 28px 0 20px;
+    padding: 0 32px 0 24px;
+  }
+
+  .footer_content {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 414px) and (max-width: 768px) and (orientation: portrait) {
+  .menu_card,
+.menu_content {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .menu__price {
+    padding: 28px 0 0 50px;
+  }
+
+  .menu__check {
+    margin: 0 0 0 40px;
+    padding: 0 32px 0 24px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #99E2D0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -791,7 +844,7 @@ header .third {
   }
 
   .btn {
-    width: 35%;
+    -width: 35%;
   }
 
   .restaurants .card_content {
@@ -804,10 +857,10 @@ header .third {
     margin: 0 0 40px 0;
   }
   .restaurants .card:nth-child(1) .new {
-    margin: 0 0 -38px calc($posnewdesktop);
+    margin: 0 0 -38px calc(32vw - 160px);
   }
   .restaurants .new {
-    margin: 0 0 -38px calc(30vw - 136px);
+    margin: 0 0 -38px calc(2vw - 160px);
   }
 
   .footer_content {
@@ -823,8 +876,11 @@ header .third {
     width: 60%;
   }
   .menu_presentation .menu_card h1 {
-    padding: 30px 0 30px 60px;
+    padding: 30px 0 30px 70px;
     font-size: 1.6em;
+  }
+  .menu_presentation .menu_card_child {
+    margin: 0 30px 0 0;
   }
 
   .menu_content {
@@ -832,7 +888,7 @@ header .third {
   }
   .menu_content h1 {
     font-size: 1.2em;
-    margin: 16px 0 16px 10px;
+    margin: 16px 0 16px 28px;
   }
   .menu_content .menu_position {
     flex-direction: row;
@@ -844,8 +900,13 @@ header .third {
     flex: 0 1 50%;
     max-width: 50%;
   }
+  .menu_content .menu_position .menu__price {
+    padding: 28px 10px 0 30px;
+  }
   .menu_content .menu_position .menu__check {
-    padding: 0 34px 0 24px;
+    -padding: 0 34px 0 24px;
+    margin: 0 0 0 10px;
+    padding: 0 55px 0 25px;
   }
 }
 

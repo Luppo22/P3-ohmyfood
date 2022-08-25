@@ -13,7 +13,7 @@ and (orientation:portrait) {
         padding: 0 80px;
         }
     & .btn {
-        width: 50%;
+        -width: 50%;
         }
     }
 .fonctionnement {
@@ -35,12 +35,15 @@ and (orientation:portrait) {
         }
     }
 
-/* - - - menu - - - - */
+/* - - - pages restaurants - - - - */
 
 .menu_presentation {
     & .menu_card h1 {
         padding: 30px 0 30px 60px;
-        font-size: 1.6em;
+        font-size: 2em;
+        }
+    & .menu_card_child .fa-heart {
+        margin: 0 50px 0 0;
         }
 }
 
@@ -48,7 +51,7 @@ and (orientation:portrait) {
     padding: 20px 40px;
     & h1 {
         font-size: 1.2em;
-        margin: 16px 0 16px 10px;
+        margin: 16px 0 16px 20px;
         }
     & .menu_position {
         flex-direction: row;
@@ -65,6 +68,9 @@ and (orientation:portrait) {
         }
     }
 
+.menu {
+    }
+
 /* - - - footer - - - - */
 .footer_content {
     padding: 20px 20px 40px 40px;
@@ -76,16 +82,53 @@ and (min-width: 768px)
 and (max-width: 1200px) 
 and (orientation:landscape) {
 
+    .fonctionnement {
+        &_btn {
+            margin: 12px 16px;
+            }
+        &_btn .number {
+            flex: 0 1 30px;
+            height: 30px;
+            padding: 6px;
+            }
+        &_pos {
+            flex-direction: row;
+            }
+        }
+    .restaurants {
+        padding: 40px 60px;
+        & .card_content {
+            flex-direction: row;
+            flex-flow: wrap;
+            justify-content: space-between;
+            }
+        & .card {
+            width: 42vw;
+            margin: 0 0 40px 0;
+            }
+        & .card:nth-child(1) {
+            & .new {
+                margin: 0 0 -38px calc(48vw - 160px);
+                }
+            }
+        & .new {
+            margin: 0 0 -38px calc(2vw - 160px);
+            }
+        }
     .menu_presentation {
         & .menu_card {
             padding: 0 120px;
+            }
+        & .menu_card h1 {
+            padding: 30px 20px;
+            font-size: 2em;
             }
     }
     .menu_content {
         padding: 20px 120px;
         & h1 {
             font-size: 1.2em;
-            margin: 16px 0 16px 10px;
+            margin: 16px 0 16px 20px;
             }
 
         & .menu_position {
@@ -97,10 +140,36 @@ and (orientation:landscape) {
                 flex: 0 1 50%;
                 max-width: 50%;
                 &__check {
-                    padding: 0 28px 0 20px;
+                    padding: 0 32px 0 24px;
                     }
                 }
             }
         }
+
+    .footer_content {
+        text-align: center;
+        }
   
+}
+
+
+@media screen
+and (min-width: 414px) 
+and (max-width: 768px) 
+and (orientation:portrait) {
+
+    .menu_card,
+    .menu_content {
+        padding-left: 60px;
+        padding-right: 60px; 
+        }
+    .menu__price {
+        padding: 28px 0 0 50px;
+        }
+    .menu__check {
+        margin: 0 0 0 40px;
+        padding: 0 32px 0 24px;
+        border-radius: 0px 20px 20px 0px;
+        background-color: #99E2D0;
+        }
 }

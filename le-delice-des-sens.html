@@ -12,34 +12,24 @@
 	<!-- Global Style -->
 	<link rel='stylesheet' href='assets/css/style.css'>
 
-	<!-- Desktop Devices Style -->
-	<link rel='stylesheet' href='assets/css/style_large.css'>
-
-	<!-- Medium Devices Style -->
-	<link rel='stylesheet' href='assets/css/style_medium.css'>
-
-	<!-- Small Devices Style -->
-	<link rel='stylesheet' href='assets/css/style_small.css'>
-
 	<!-- Fontawesome -->
 	<script src="https://kit.fontawesome.com/61c7f61131.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
 </head>
 <body>
 
 <main>
 
-<header>
-	<nav class="arrow"><a href="index.html"><i class="fa-solid fa-arrow-left"></i></a></nav>
-	<img class="logo" src="assets/img/logo/ohmyfood.png" alt="logoOhMyFood">
-	<div class="third">&nbsp;</div>
-</header>
+	<header>
+		<nav class="arrow"><a href="index.html"><i class="fa-solid fa-arrow-left"></i></a></nav>
+		<img class="logo" src="assets/img/logo/ohmyfood.png" alt="logoOhMyFood">
+		<div class="third">&nbsp;</div>
+	</header>
 
 	<section class="menu_presentation">
 		<img class="image_menu .poscor_up2"
 					src="assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 						
 					alt="Ménilmontant, le restaurant La Palette du Goût">
-		<figcaption class="menu_card">
+		<div class="menu_card">
 			<div class="menu_card_child">
 				<h1 class="corh1">Le délice des sens</h1>	
 			</div>
@@ -47,13 +37,13 @@
 				<i class="fa-solid fa-heart"></i>
 				<i class="fa-regular fa-heart"></i>
 			</div>
-		</figcaption>
+		</div>
 	</section>
 	
 	<section class="menu_content">
 		<h1>entrées</h1>
 		<div class="menu_position">
-			<button class="menu" type="button">
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -66,8 +56,8 @@
 						</div>
 					</div>
 				</div>
-			</button>
-			<button class="menu" type="button">
+			</div>
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -80,8 +70,8 @@
 						</div>
 					</div>
 				</div>
-			</button>
-			<button class="menu" type="button">
+			</div>
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -94,12 +84,12 @@
 						</div>
 					</div>
 				</div>
-			</button>
+			</div>
 		</div>
 
 		<h1>plats</h1>
 		<div class="menu_position">
-			<button class="menu" type="button">
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -112,8 +102,8 @@
 						</div>
 					</div>
 				</div>
-			</button>
-			<button class="menu" type="button">
+			</div>
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -126,8 +116,8 @@
 						</div>
 					</div>
 				</div>
-			</button>
-			<button class="menu" type="button">
+			</div>
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -140,12 +130,12 @@
 						</div>
 					</div>
 				</div>
-			</button>
+			</div>
 		</div>
 
 		<h1>desserts</h1>
 		<div class="menu_position">
-			<button class="menu" type="button">
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -158,8 +148,8 @@
 						</div>
 					</div>
 				</div>
-			</button>
-			<button class="menu" type="button">
+			</div>
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -172,8 +162,8 @@
 						</div>
 					</div>
 				</div>
-			</button>
-			<button class="menu" type="button">
+			</div>
+			<div class="menu">
 				<div class="menu__elements">
 					<div class="menu__container">
 						<div class="menu__description">
@@ -186,21 +176,24 @@
 						</div>
 					</div>
 				</div>
-			</button>
+			</div>
 		</div>
-		<button class="btn" type="button">Commander</button>
+		<div class="presentation">
+			<a href="#" class="btn">Commander</a>
+		</div>
 	</section>
 	
-<footer>
-	<nav class="footer_content">
-		<ul>
-			<li><h2>ohmyfood</h2></li>
-			<li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
-			<li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
-			<li><a href="#">Mentions légales</a></li>
-			<li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
-		</ul>
-</footer>
+	<footer>
+		<nav class="footer_content">
+			<ul>
+				<li><h2>ohmyfood</h2></li>
+				<li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
+				<li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
+				<li><a href="#">Mentions légales</a></li>
+				<li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+			</ul>
+		</nav>
+	</footer>
 </main>
 
 </body>
