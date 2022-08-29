@@ -17,14 +17,18 @@ and (orientation:portrait) {
         }
     }
 .fonctionnement {
+    & h1 {
+        font-size: 1.5em;
+        padding: 0 0 10px 20px;
+        }
     &_btn {
         margin: 12px 16px;
         }
     &_btn .number {
-        flex: 0 1 3vw;
+        /*flex: 0 1 3vw;*/
         width: 3vw;
         height: 3vw;
-        padding: 6px;
+        padding: 4px 6px 10px 6px;
         }
     &_btn p {
         text-align: left;
@@ -34,7 +38,12 @@ and (orientation:portrait) {
         flex-direction: row;
         }
     }
-
+.restaurants {
+    & h1 {
+        font-size: 1.5em;
+        padding: 0 0 20px 20px;
+        }
+    }
 /* - - - pages restaurants - - - - */
 
 .menu_presentation {
@@ -61,14 +70,15 @@ and (orientation:portrait) {
             margin: 4px 0;
             flex: 0 1 50%;
             max-width: 50%;
+            &__price {
+                margin: 0;
+                }
             &__check {
-                padding: 0 28px 0 20px;
+                padding: 0 3.5vw 0 2.2vw;
+                -padding: 0 28px 0 20px;
                 }
             }
         }
-    }
-
-.menu {
     }
 
 /* - - - footer - - - - */
@@ -87,9 +97,14 @@ and (orientation:landscape) {
             margin: 12px 16px;
             }
         &_btn .number {
-            flex: 0 1 30px;
+            /*flex: 0 1 30px;
             height: 30px;
             padding: 6px;
+            padding: 0 10px 10px 10px;*/
+            height: 2.6vw;
+            width: 2.6vw;
+            border-radius: 50%;
+            padding: 6px 8px;
             }
         &_pos {
             flex-direction: row;
@@ -105,14 +120,6 @@ and (orientation:landscape) {
         & .card {
             width: 42vw;
             margin: 0 0 40px 0;
-            }
-        & .card:nth-child(1) {
-            & .new {
-                margin: 0 0 -38px calc(48vw - 160px);
-                }
-            }
-        & .new {
-            margin: 0 0 -38px calc(2vw - 160px);
             }
         }
     .menu_presentation {
@@ -145,30 +152,66 @@ and (orientation:landscape) {
                 }
             }
         }
-
     .footer_content {
         text-align: center;
-        }
-  
-}
-
+        } 
+    }
 
 @media screen
-and (min-width: 414px) 
+and (min-width: 400px) 
 and (max-width: 768px) 
 and (orientation:portrait) {
 
+    .presentation {
+        & p {
+            font-size: 1.5em;
+            padding: 0 60px;
+            }
+        }
+    .fonctionnement {
+        padding: 40px 14px;
+        background: white;
+        & h1 {
+            font-size: 1.6em;
+            padding: 10px 20px;
+            }
+        &_btn {
+            margin: 12px 16px;
+            }
+        &_btn p {
+            padding: 0 12px;
+            }
+        &_btn .number {
+            -flex: 0 1 36px;
+            height: 30px;
+            width: 30px;
+            padding: 6px 10px 10px 10px;
+            }
+        &_pos {
+            flex-direction: row;
+            }
+        }
+    .restaurants {
+            padding: 40px;
+        & h1 {
+            font-size: 1.5em;
+            padding: 0 0 20px 20px;
+            }
+        }
     .menu_card,
     .menu_content {
         padding-left: 60px;
         padding-right: 60px; 
         }
+    .menu__description {
+            min-width: 80%;
+            }
     .menu__price {
-        padding: 28px 0 0 50px;
+        padding: 28px 0 0 20px;
         }
     .menu__check {
-        margin: 0 0 0 40px;
-        padding: 0 32px 0 24px;
+        margin: 0 0 0 10px;
+        padding: 0 26px 0 22px;
         border-radius: 0px 20px 20px 0px;
         background-color: #99E2D0;
         }
